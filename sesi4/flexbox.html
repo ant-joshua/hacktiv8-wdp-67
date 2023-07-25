@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex {
+            display: flex;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .flex-2 {
+            flex: 2;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .flex-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .flex-column-reverse {
+            flex-direction: column-reverse;
+        }
+
+        .justify-space-between {
+            justify-content: space-between;
+        }
+
+        .justify-space-evenly {
+            justify-content: space-evenly;
+        }
+
+        .justify-space-around {
+            justify-content: space-around;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="flex flex-row justify-space-between">
+        <div class="flex-1">
+            Header Logo
+        </div>
+
+        <div class="flex flex-1 flex-row justify-space-between">
+            <div class="">
+                <a href="">Home</a>
+            </div>
+            <div class="">
+                <a href="">About</a>
+            </div>
+            <div class="">
+                <a href="">Contact</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div class="flex bg-blue">
+        ini blue
+    </div> -->
+</body>
+
+</html>

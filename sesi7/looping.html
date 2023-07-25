@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // looping
+
+        function whileLoop() {
+            var i = 0;
+            while (i < 10) {
+                console.log(i);
+                i++;
+            }
+        }
+
+        function forLoop() {
+            for (var i = 0; i < 10; i++) {
+                console.log(i);
+            }
+        }
+
+        function forEachLoop() {
+            var arr = [1, 2, 3, 4, 5];
+            arr.forEach(function (item, index) {
+                console.log(item, index);
+
+            });
+        }
+
+        function doWhileLoop() {
+            var i = 0;
+            do {
+                console.log(i);
+                i++;
+            } while (i < 10);
+        }
+
+        function forInLoop() {
+            var obj = {
+                nama: 'budi',
+                umur: 20,
+                kelas: 'A',
+                jenisKelamin: 'pria'
+
+
+                // sampe 1000
+            };
+
+            console.log(obj[''])
+
+            for (var key in obj) {
+                console.log(key, obj[key]); // obj['nama'] = budi
+
+                // console.
+            }
+        }
+
+        function forOfLoop() {
+            var arr = [1, 2, 3, 4, 5];
+            for (var x of arr) {
+                console.log(x);
+
+                var obj = {
+                    nama: 'budi',
+                    umur: 20,
+                    kelas: 'A',
+                    jenisKelamin: 'pria'
+                }
+
+                for (var key in obj) {
+                    console.log(key, obj[key]);
+                }
+            }
+        }
+
+
+
+
+
+        function iniTesting() {
+
+            for (let i = 0; i < 20; i++) {
+
+                // console.log(i);
+
+                var tulisan = '';
+
+                for (let j = 0; j < i; j++) {
+                    tulisan += '*';
+                }
+
+
+
+                console.log(tulisan);
+            }
+
+
+            for (let i = 20; i > 0; i--) {
+
+                // console.log(i);
+
+                var tulisan = '';
+
+                for (let j = 0; j < i; j++) {
+                    tulisan += '*';
+                }
+
+
+
+                console.log(tulisan);
+            }
+
+
+        }
+
+        iniTesting();
+
+
+
+    </script>
+</body>
+
+</html>

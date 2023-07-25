@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <div id="nama"></div>
+        <div id="umur"></div>
+        <div id="isGraduated"></div>
+    </div>
+
+    <script>
+        // Tipe data number
+        let x = 10;
+        let y = 20;
+        let phi = 3.14;
+        // Tipe data string
+        let nama = "Joshua";
+        // Tipe data boolean
+        let isGraduated = true; // true / false
+        // Tipe data object
+        let student = {
+            name: "Joshua",
+            age: 20,
+            isGraduated: true
+        };
+
+        document.getElementById("nama").innerHTML = student.name;
+        document.getElementById("umur").innerHTML = student.age;
+        document.getElementById("isGraduated").innerHTML = student.isGraduated ? "Lulus" : "Tidak Lulus";
+
+
+        // Tipe data array
+        let fruits = ["Apple", "Mango", "Orange"];
+        console.log(fruits[0])
+        let numbers = [1, 2, 3, 4, 5];
+        let mixed = [1, "Apple", true, 3.14];
+        let students = [{
+            name: "Joshua",
+            age: 20,
+            isGraduated: true
+        },
+        {
+            name: "John",
+            age: 21,
+            isGraduated: false
+        },
+        {
+            name: "Jane",
+            age: 22,
+            isGraduated: true
+        }
+        ];
+        console.log(students[0])
+        // Tipe data function
+
+    </script>
+</body>
+
+</html>

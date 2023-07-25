@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="judul">
+        Ini adalah judul
+    </h1>
+
+    <ul>
+        <li class="konten" onclick="removeKontenByIndex(0)"></li>
+        <li class="konten" onclick="removeKontenByIndex(1)"></li>
+        <li class="konten"></li>
+        <li class="konten"></li>
+    </ul>
+
+    <div>
+        <img src="https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-up-arrow-icon-png-image_956434.jpg"
+            alt="arrow" id="arrow">
+
+    </div>
+
+    <button onclick="toggleArrow()">Toggle Arrow</button>
+
+    <script>
+        let judul = document.querySelector("#judul");
+
+
+
+        let angka = 1;
+        let iniInterval = setInterval(() => {
+            judul.innerHTML = "Ini adalah judul #" + angka;
+            angka++;
+        }, 2000);
+
+        setTimeout(() => {
+            clearInterval(iniInterval);
+        }, 10000);
+
+        let konten = document.querySelectorAll(".konten");
+        // console.log(konten);
+
+        konten.forEach((value, key) => {
+            value.innerHTML = "Ini adalah konten #" + (key + 1);
+        });
+
+        function removeKontenByIndex(index) {
+            konten[index].remove();
+        }
+
+        let direction = "up";
+
+
+        function toggleArrow(direction) {
+            let arrow = document.querySelector("#arrow");
+            if (direction == "up") {
+                arrow.style.transform = "rotate(180deg)";
+                direction = "down";
+            } else {
+                arrow.style.transform = "rotate(0deg)";
+                direction = "up";
+            }
+            // arrow.classList.toggle("arrow");
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

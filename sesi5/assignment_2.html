@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        ini biodata <span id="name">saya</span>
+
+
+        <div id="nama"></div>
+        <div id="umur"></div>
+        <div id="kelas"></div>
+        <div id="jenisKelamin"></div>
+
+        <button onclick="onEditForm()">edit</button>
+    </div>
+    <div id="biodataForm">
+        <form>
+            <div>
+                <label>
+                    Nama
+                </label>
+                <input type="text" name="formName" data-id="nama" onkeypress="onChangeInput(event)"
+                    onchange="onChangeInput(event)" placeholder="Inputkan Nama" />
+            </div>
+            <div>
+                <label>
+                    Umur
+                </label>
+                <input type="text" name="formName" data-id="umur" onchange="onChangeInput(event)"
+                    placeholder="Inputkan Umur" />
+            </div>
+            <div>
+                <label>
+                    Kelas
+                </label>
+                <input type="text" name="formName" data-id="kelas" onchange="onChangeInput(event)"
+                    placeholder="Inputkan Nama" />
+            </div>
+            <div>
+                <label>
+                    Jenis Kelamin
+                </label>
+                <select data-id="jenisKelamin" onchange="onChangeInput(event)">
+                    <option value="pria">Pria</option>
+                    <option value="wanita">Wanita</option>
+                </select>
+            </div>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    <script>
+
+        if (localStorage.getItem("name") != null) {
+            document.getElementById("name").innerHTML = localStorage.getItem("name");
+        }
+
+
+        let mahasiswaList = [
+            {
+                name: "Joshua",
+            }
+        ];
+
+        mahasiswaList.map((value, index) => {
+            console.log(value.name);
+        });
+
+
+
+
+        function onChangeInput(event) {
+            const inputValue = event.target.value;
+            console.log(event.target.dataset.id);
+            const label = event.target.dataset.id;
+
+            const labelElement = document.getElementById(label);
+            labelElement.innerText = inputValue;
+        }
+
+        function sum(label, ...b) {
+            let total = 0;
+            console.log(b);
+            b.forEach((value, index) => {
+                console.log(" value : " + value + " index : " + index);
+
+                total += value; // total = total + value
+            })
+
+            const totalWithReduce = b.reduce((total, value) => {
+                return total + value;
+            }, 0);
+
+            console.log(totalWithReduce);
+
+
+
+            return label + ":" + total;
+        }
+
+        console.log(sum("penjumlah total nilai", 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+
+        function onEditForm() {
+
+            let form = document.getElementById("biodataForm");
+
+
+            if (form.classList.contains("d-none")) {
+                form.classList.remove("d-none");
+            } else {
+                form.classList.add("d-none");
+            }
+
+            let getName = document.getElementById("name").textContent;
+
+            let nameInput = document.getElementById("nameInput");
+            nameInput.value = getName;
+        }
+
+        function submitForm() {
+            let nameInput = document.getElementById("nameInput");
+
+            let getName = document.getElementById("name");
+
+            getName.textContent = nameInput.value;
+        }
+
+    </script>
+</body>
+
+</html>
