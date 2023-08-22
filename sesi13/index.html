@@ -48,7 +48,7 @@
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" ${todo.checked ? 'checked' : ''} onchange="checkTodo(${todo.id})">
                                 </div>
                                 <input type="text" class="form-control" id="add-todo" value="${todo.name}" />
-                                <button type="button" class="btn btn-danger" onclick="deleteTodo(${index})">Delete</button>
+                                <button type="button" class="btn btn-danger" onclick="deleteTodo(${todo.id})">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -68,10 +68,23 @@
             displayTodo();
         }
 
-        function deleteTodo(index) {
+        function deleteTodo(id) {
+
+            const confirmDelete = confirm('Apakah anda yakin ingin menghapus todo ini?');
+
+            if (!confirmDelete) return;
+
             let todos = JSON.parse(localStorage.getItem('todos'));
-            todos.splice(index, 1);
-            localStorage.setItem('todos', JSON.stringify(todos));
+
+            const todo = todos.find((todo) => todo.id === id);
+
+            if (todo.checked) {
+                const todoFilter = todos.filter((todo) => todo.id !== id);
+                localStorage.setItem('todos', JSON.stringify(todoFilter));
+            } else {
+                alert('Todo belum di check');
+            }
+
             displayTodo();
         }
 
