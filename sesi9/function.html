@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function hitungTotalDiskon(harga, diskon) {    // 10 , 12.5
+            return harga - (harga * diskon);
+        }
+
+        function hitungTotalPajak(harga, pajak) {
+            return harga * pajak;
+        }
+
+        function hitungTotalHarga(harga, diskon) {
+            const totalDiskon = hitungTotalDiskon(harga, diskon);
+            return totalDiskon + hitungTotalPajak(totalDiskon, 0.1); // pajak
+        }
+
+        const totalHarga = hitungTotalHarga(10000, 0.1);
+
+        console.log(totalHarga)
+    </script>
+</body>
+
+</html>

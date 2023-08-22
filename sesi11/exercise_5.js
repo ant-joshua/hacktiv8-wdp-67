@@ -8,6 +8,10 @@ function threeStepsAB(text) {
   return result;
 }
 
-console.log(threeStepsAB("lane borrowed"));
+let text = "lane borrowed";
+console.log(text[1]);
+console.log(text[1 + 4]);
 
-console.log(threeStepsAB("you are boring"));
+// console.log(threeStepsAB("lane borrowed"));
+
+// console.log(threeStepsAB("you are boring"));

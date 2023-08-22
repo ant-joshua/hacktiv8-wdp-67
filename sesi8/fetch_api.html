@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const areas = [];
+        const data = {
+            areas: undefined
+        }
+
+        const mapData = data.areas?.map((value, index) => {
+
+
+            // console.log(getWaktu);
+
+            return {
+                "id": value.id,
+                "latitude": value.latitude,
+                "longitude": value.longitude,
+                "coordinate": value.coordinate,
+                "type": value.type,
+                "region": value.region,
+                "level": value.level,
+                "description": value.description,
+                "provinsi": value.domain,
+                "tags": value.tags,
+                "waktu": getWaktu
+            }
+
+        })
+
+        console.log(mapData);
+
+
+        // const url = "https://cuaca-gempa-rest-api.vercel.app/weather/jawa-barat";
+
+        // const getData = async () => {
+        //     const response = await fetch(url);
+        //     const data = await response.json();
+        //     console.log(data);
+
+
+
+
+        //     const mapData = data?.data?.areas?.map((value, index) => {
+
+
+        //         const getWaktu = value.params?.map((paramValue, paramIndex) => {
+        //             return paramValue.times;
+        //         })
+
+        //         // console.log(getWaktu);
+
+        //         return {
+        //             "id": value.id,
+        //             "latitude": value.latitude,
+        //             "longitude": value.longitude,
+        //             "coordinate": value.coordinate,
+        //             "type": value.type,
+        //             "region": value.region,
+        //             "level": value.level,
+        //             "description": value.description,
+        //             "provinsi": value.domain,
+        //             "tags": value.tags,
+        //             "waktu": getWaktu
+        //         }
+
+        //     })
+
+        //     console.log(mapData);
+
+        // }
+
+
+        // getData();
+    </script>
+</body>
+
+</html>

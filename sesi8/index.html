@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let mahasiswaList = ["Rizal", "Rizky", "Rizwan", "Rizaldi", "Rizalina"];
+
+        console.log("Data Awal : " + mahasiswaList);
+
+        mahasiswaList.push("Budi");
+
+        console.log("Data Push : " + mahasiswaList);
+
+        mahasiswaList.pop();
+
+        console.log("Data Pop : " + mahasiswaList);
+
+        mahasiswaList.shift();
+
+        console.log("Data Shift : " + mahasiswaList);
+
+        mahasiswaList.unshift("Budi");
+
+        console.log("Data Unshift : " + mahasiswaList);
+
+        const dataJoin = mahasiswaList.join(" - ");
+
+        console.log("Data Join : ", dataJoin);
+
+
+        mahasiswaList.push("Andi");
+
+        const dataSort = mahasiswaList.sort();
+
+        console.log("Data Sort : " + dataSort);
+
+        mahasiswaList.splice(2, 1, "Joshua");
+
+        console.log("Data Splice : " + mahasiswaList);
+
+        const dataSplit = dataJoin.split(" - ");
+
+        console.log("Data Split : ", dataSplit);
+
+        const dataSortAsc = mahasiswaList.sort((a, b) => a - b);
+
+        console.log("Data Sort Asc : ", dataSortAsc);
+
+        // const dataSortDesc = mahasiswaList.reverse();
+
+        // console.log("Data Sort Desc : ", dataSortDesc);
+
+        const dataSortByDesc = mahasiswaList.sort((a, b) => {
+            const nameA = b.toUpperCase(); // ignore upper and lowercase
+            const nameB = a.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+
+            // names must be equal
+            return 0;
+        });
+
+        console.log("Data Sort By Desc : ", dataSortByDesc);
+
+
+        const daftarNilai = [91, 80, 71, 61, 50, 40, 30, 20, 10];
+
+        const filterNilai = daftarNilai.filter((nilai) => nilai > 50);
+
+        console.log("Filter Nilai : ", filterNilai);
+
+        const odd = daftarNilai.filter((nilai) => nilai % 2 == 1);
+
+        console.log("Odd : ", odd);
+
+        const even = daftarNilai.filter((nilai) => nilai % 2 == 0);
+
+        console.log("Even : ", even);
+
+        const months = ["Jan", "March", "April", "June"];
+
+        const filterMonth = months.filter((month) => !["March", "June"].includes(month));
+
+        console.log("Filter Month : ", filterMonth);
+
+
+        const foodDataList = [{
+            name: "Nasi Goreng",
+            price: 15000,
+            category: "Food",
+            tag: ["Pedas", "Gurih"],
+            isAvailable: true
+        }, {
+            name: "Ayam Goreng",
+            price: 20000,
+            category: "Food",
+            tag: ["Gurih"],
+            isAvailable: true
+        }, {
+            name: "Es Teh",
+            price: 5000,
+            category: "Drink",
+            tag: ["Manis", "Segar"],
+            isAvailable: true
+        }, {
+            name: "Es Jeruk",
+            price: 5000,
+            category: "Drink",
+            tag: ["Manis", "Segar", "Asam"],
+            isAvailable: false
+        }, {
+            name: "Es Kelapa",
+            price: 10000,
+            category: "Drink",
+            tag: ["Manis", "Segar"],
+            isAvailable: true
+        }];
+
+        const foodDataFilter = foodDataList.filter((food) => food.category == "Drink" && food.isAvailable);
+
+        console.log("Food Data Filter : ", foodDataFilter);
+
+        const foodFilterAsem = foodDataList.filter((food) => food.tag.includes("Asam"));
+
+        console.log("Food Filter Asem : ", foodFilterAsem);
+
+
+        const foodDataMap = foodDataList.map((food) => {
+
+
+            // return food.price
+
+            return {
+                name: food.name,
+                price: food.price * 1.5,
+                category: food.category,
+                tag: food.tag,
+                isAvailable: food.isAvailable,
+                // discount: food.price * 0.1
+            }
+        });
+
+        console.log("Food Data Map : ", foodDataMap);
+
+    </script>
+</body>
+
+</html>

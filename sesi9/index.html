@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // map 
+        const arr = [1, 2, 3, 4, 5];
+        const mapArr = arr.map((item, index, originArray) => {
+            return {
+                urutan: index + 1,
+                nilai: item * 1,
+                map_nilai: originArray.map((item2, index2) => {
+                    return item2 * (index + 1)
+                })
+            }
+        });
+
+        console.log(mapArr);
+
+        const bilangan = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        const bilanganObject = [{
+            nilai: 1,
+            nama: 'satu'
+        }, {
+            nilai: 2,
+            nama: 'dua'
+        }];
+
+        const genap = bilangan.filter((item) => {
+            return item % 2; // 1
+        });
+
+        console.log(genap);
+
+        const sum = bilanganObject.reduce((acc, item) => {
+            console.log(acc, item);
+            return acc + item.nilai;
+        }, 0);
+
+        console.dir(sum);
+    </script>
+</body>
+
+</html>
