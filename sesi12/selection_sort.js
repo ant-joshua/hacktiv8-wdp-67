@@ -13,6 +13,9 @@ function selectionSort(input) {
       // first loop
       // j = 1 , min = 0 , input[j] = 38 , input[min] = 27
       // j = 2 , min = 0 , input[j] = 4 , input[min] = 27
+
+      // second loop
+      // j = 2 , min = 1 , input[j] = 27 , input[min] = 38
       if (input[j] < input[min]) {
         min = j;
       }
