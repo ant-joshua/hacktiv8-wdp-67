@@ -47,7 +47,7 @@
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1" ${todo.checked ? 'checked' : ''} onchange="checkTodo(${todo.id})">
                                 </div>
-                                <input type="text" class="form-control" id="add-todo" value="${todo.name}" />
+                                <input type="text" class="form-control todoName" data-id="${todo.id}" value="${todo.name}" onchange="updateTodo(${todo.id})" />
                                 <button type="button" class="btn btn-danger" onclick="deleteTodo(${todo.id})">Delete</button>
                             </div>
                         </div>
@@ -65,6 +65,20 @@
 
             todos[findIndex].checked = !todos[findIndex].checked;
             localStorage.setItem('todos', JSON.stringify(todos));
+            displayTodo();
+        }
+
+        function updateTodo(id) {
+            const todo = document.querySelector(`.todoName[data-id="${id}"]`).value;
+
+            let todos = JSON.parse(localStorage.getItem('todos'));
+
+            const findIndex = todos.findIndex((todo) => todo.id === id);
+
+            todos[findIndex].name = todo;
+
+            localStorage.setItem('todos', JSON.stringify(todos));
+
             displayTodo();
         }
 
