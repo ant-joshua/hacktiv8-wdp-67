@@ -84,7 +84,7 @@
 
         function deleteTodo(id) {
 
-            const confirmDelete = confirm('Apakah anda yakin ingin menghapus todo ini?');
+            const confirmDelete = confirm('Apakah anda yakin ingin menghapus todo ini?'); // yes / no 
 
             if (!confirmDelete) return;
 
@@ -104,6 +104,8 @@
 
         function submitTodo() {
             const todo = document.getElementById('add-todo').value;
+
+            if (todo === '') return alert('Todo tidak boleh kosong');
 
             let todos = JSON.parse(localStorage.getItem('todos'))
 

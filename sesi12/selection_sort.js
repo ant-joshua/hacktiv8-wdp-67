@@ -27,6 +27,10 @@ function selectionSort(input) {
       input[min] = tmp;
     }
     // 4,38,27,43,9,82,10 first loop
+    // 4,9,27,43,38,82,10 second loop
+    // 4,9,10,43,38,82,27 third loop
+    // 4,9,10,27,38,82,43 fourth loop
+    // 4,9,10,27,38,43,82 fifth loop
   }
 
   return input;
